@@ -68,14 +68,41 @@ naver.maps.Event.once(map, 'init_stylemap', function () {
     });
 
     customControl.setMap(map);
+//지움
+    //Map 객체의 controls 활용하기
+    var $locationBtn = $(locationBtnHtml),
+        locationBtnEl = $locationBtn[0];
 
-    var domEventListener = naver.maps.Event.addDOMListener(customControl.getElement(), 'click', function() {
-        map.setCenter(locPosition);
+    map.controls[naver.maps.Position.LEFT_CENTER].push(locationBtnEl);
+var domEventListener = naver.maps.Event.addDOMListener(locationBtnEl, 'click', function() {
+        map.setCenter(new naver.maps.LatLng(37.3595953, 127.1553971));
     });
+});
 //여기바꿈
   
- }); .      
+  // 지도에 마커와 인포윈도우를 표시하는 함수입니다
+function displayMarker(locPosition, message) {
 
+    // 마커를 생성합니다
+    var marker = new naver.maps.Marker({  
+        map: map, 
+        position: locPosition
+    }); 
+    
+    var iwContent = message, // 인포윈도우에 표시할 내용
+        iwRemoveable = true;
+
+    // 인포윈도우를 생성합니다
+    var infowindow = new naver.maps.InfoWindow({
+        content : iwContent,
+        removable : iwRemoveable
+    });
+    
+    // 인포윈도우를 마커위에 표시합니다 
+    infowindow.open(map, marker);
+    
+    // 지도 중심좌표를 접속위치로 변경합니다
+}
 
   
 </script>

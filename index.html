@@ -13,21 +13,25 @@
 <div id="map" style="width:100%;height:100vh;"></div>
 
 <script>
-var mapOptions = {
-    center: new naver.maps.LatLng(35.945236,126.6800666),
-    zoom: 13
-};
+var map = new naver.maps.Map(document.getElementById('map'), {
+    zoom: 14,
+    mapTypeId: 'normal',
+    center: new naver.maps.LatLng(35.945236,126.6800666)
+});
 
-var map = new naver.maps.Map('map', mapOptions);
-  
- var $locationBtn = $(locationBtnHtml),
-        locationBtnEl = $locationBtn[0];
+var HOME_PATH = window.HOME_PATH || '.';
 
-    map.controls[naver.maps.Position.LEFT_CENTER].push(locationBtnEl);
-
-    naver.maps.Event.addDOMListener(locationBtnEl, 'click', function() {
-        map.setCenter(new naver.maps.LatLng(35.942031, 126.681139));
+naver.maps.Event.once(map, 'init_stylemap', function () {
+    $.ajax({
+        url: HOME_PATH +'/data/seorak.gpx',
+        dataType: 'xml',
+        success: startDataLayer
     });
+});
+
+function startDataLayer(xmlDoc) {
+    map.data.addGpx(xmlDoc);
+}
   
 </script>
 </body>

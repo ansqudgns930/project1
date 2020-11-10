@@ -19,6 +19,16 @@ var mapOptions = {
 };
 
 var map = new naver.maps.Map('map', mapOptions);
+  
+ var $locationBtn = $(locationBtnHtml),
+        locationBtnEl = $locationBtn[0];
+
+    map.controls[naver.maps.Position.LEFT_CENTER].push(locationBtnEl);
+
+    naver.maps.Event.addDOMListener(locationBtnEl, 'click', function() {
+        map.setCenter(new naver.maps.LatLng(35.942031, 126.681139));
+    });
+  
 </script>
 </body>
 </html>

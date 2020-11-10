@@ -75,7 +75,7 @@ naver.maps.Event.once(map, 'init_stylemap', function () {
 
     map.controls[naver.maps.Position.LEFT_CENTER].push(locationBtnEl);
 var domEventListener = naver.maps.Event.addDOMListener(locationBtnEl, 'click', function() {
-        map.setCenter(new naver.maps.LatLng(37.3595953, 127.1553971));
+        map.setCenter(locPosition));
     });
 });
 //여기바꿈

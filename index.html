@@ -13,11 +13,9 @@
 <div id="map" style="width:100%;height:100vh;"></div>
 
 <script>
-var locationBtnHtml = '<a href="#" class="btn_mylct"><span class="spr_trff spr_ico_mylct">NAVER 그린팩토리</span></a>';
   var map = new naver.maps.Map(document.getElementById('map'), {
     zoom: 14,
     mapTypeId: 'normal',
-    useStyleMap: true,
     center: new naver.maps.LatLng(35.945236,126.6800666)
 });
 
@@ -86,25 +84,8 @@ function displayMarker(locPosition, message) {
     // 인포윈도우를 마커위에 표시합니다 
     infowindow.open(map, marker);
    
-    //gps 버튼
-  
-naver.maps.Event.once(map, 'init_stylemap', function () {
-    //customControl 객체 이용하기
-    var customControl = new naver.maps.CustomControl(locationBtnHtml, {
-        position: naver.maps.Position.TOP_LEFT
-    });
+   
 
-    customControl.setMap(map);
-//지움
-    //Map 객체의 controls 활용하기
-    var $locationBtn = $(locationBtnHtml),
-        locationBtnEl = $locationBtn[0];
-
-    map.controls[naver.maps.Position.LEFT_CENTER].push(locationBtnEl);
-var domEventListener = naver.maps.Event.addDOMListener(locationBtnEl, 'click', function() {
-        map.setCenter(locPosition));
-    });
-  
     map.setCenter(locPosition); 
     // 지도 중심좌표를 접속위치로 변경합니다
 }

@@ -76,7 +76,7 @@ function displayMarker(locPosition, message) {
     map.setCenter(locPosition);      
 }    
   
-   
+  //공대3호관 
   var polygon = new naver.maps.Polygon({
     map: map,
     paths: [
@@ -105,7 +105,7 @@ function displayMarker(locPosition, message) {
     strokeOpacity: 0.6,
     strokeWeight: 3
 });
-  
+  //인천1
     var polygon = new naver.maps.Polygon({
     map: map,
     paths: [
@@ -124,6 +124,28 @@ function displayMarker(locPosition, message) {
     fillColor: '#FFC300',
     fillOpacity: 0.3,
     strokeColor: '#FFC300',
+    strokeOpacity: 0.6,
+    strokeWeight: 3
+});
+  //인천2
+    var polygon = new naver.maps.Polygon({
+    map: map,
+    paths: [
+        [
+            new naver.maps.LatLng(37.470901, 126.703678),
+            new naver.maps.LatLng(37.470564, 126.706230),
+            new naver.maps.LatLng(37.470500, 126.707121),
+            new naver.maps.LatLng(37.468121, 126.707141),
+            new naver.maps.LatLng(37.468185, 126.705703),
+            new naver.maps.LatLng(37.468474, 126.703435),
+            new naver.maps.LatLng(37.470901, 126.703678),
+//             new naver.maps.LatLng(35.942267, 126.680675),
+//             new naver.maps.LatLng(37.37544345085402, 127.11224555969238)
+        ],
+    ],
+    fillColor: '#ff0000',
+    fillOpacity: 0.3,
+    strokeColor: '#ff0000',
     strokeOpacity: 0.6,
     strokeWeight: 3
 });

@@ -106,6 +106,29 @@ function displayMarker(locPosition, message) {
     strokeWeight: 3
 });
   
+    var polygon = new naver.maps.Polygon({
+    map: map,
+    paths: [
+        [
+            new naver.maps.LatLng(37.466326, 126.709397),
+            new naver.maps.LatLng(37.466053, 126.709821),
+            new naver.maps.LatLng(37.465814, 126.709617),
+            new naver.maps.LatLng(37.466015, 126.709157),
+            new naver.maps.LatLng(37.466326, 126.709397),
+//             new naver.maps.LatLng(35.941846, 126.681587),
+//             new naver.maps.LatLng(35.942019, 126.680633),
+//             new naver.maps.LatLng(35.942267, 126.680675),
+//             new naver.maps.LatLng(37.37544345085402, 127.11224555969238)
+        ],
+    ],
+    fillColor: '#FFC300',
+    fillOpacity: 0.3,
+    strokeColor: '#FFC300',
+    strokeOpacity: 0.6,
+    strokeWeight: 3
+});
+  
+  
 </script>
 </body>
 </html>

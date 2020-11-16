@@ -25,10 +25,7 @@
 
   //버튼
 
-    var mapContainer = document.getElementById('Btn1');
-    customControl.setMap('Btn1');
-
-    navigator.geolocation.getCurrentPosition(document.getElement(), 'click', function() {
+    navigator.geolocation.getCurrentPosition(document.getElementById('Btn1'), 'click', function() {
        map.setCenter(locPosition);
     });
 

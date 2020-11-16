@@ -30,6 +30,23 @@
       
 var map = new naver.maps.Map('map', mapOptions);
   
+  
+    //gps click
+  
+  var c = function(pos) {
+     var lat    = pos.coords.latitude,
+         long   = pos.coords.longitude,
+         coords = lat + ',' + long;
+    
+    document.getElementById('map').setattribute('src', 'https://openapi.map.naver.com/openapi/v3/maps.js?q='+ coords +'&z=60&ncpClientId=0l17ip7m3y');
+    
+  }
+  document.getElementById('get_location').onclick = funtion() {
+      navigator.geolocation.getcurrentposition(c);
+      return false;
+  }
+  
+  
   // HTML5의 geolocation으로 사용할 수 있는지 확인합니다 
 if (navigator.geolocation) {
     
@@ -80,21 +97,7 @@ function displayMarker(locPosition, message) {
     // 지도 중심좌표를 접속위치로 변경합니다
     map.setCenter(locPosition);      
 }    
- 
-  //gps click
-  
-  var c = function(pos) {
-     var lat    = pos.coords.latitude,
-         long   = pos.coords.longitude,
-         coords = lat + ',' + long;
-    
-    document.getElementById('map').setattribute('src', 'https://openapi.map.naver.com/openapi/v3/maps.js?q='+ coords +'&z=60&ncpClientId=0l17ip7m3y');
-    
-  }
-  document.getElementById('get_location').onclick = funtion() {
-      navigator.geolocation.getcurrentposition(c);
-      return false;
-  }
+
   
   
     //공대3호관 

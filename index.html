@@ -82,6 +82,15 @@ function displayMarker(locPosition, message) {
 }    
  
   //gps click
+  
+  var c = function(pos) {
+     var lat    = pos.coords.latitude,
+         long   = pos.coords.longitude,
+         coords = lat + ',' + long;
+    
+    document.getElementById('map').setattribute('src', 'https://openapi.map.naver.com/openapi/v3/maps.js?q='+ coords +'&z=60&ncpClientId=0l17ip7m3y');
+    
+  }
   document.getElementById('get_location').onclick = funtion() {
       navigator.geolocation.getcurrentposition(c);
       return false;

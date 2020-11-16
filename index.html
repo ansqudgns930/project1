@@ -80,6 +80,12 @@ function displayMarker(locPosition, message) {
     // 지도 중심좌표를 접속위치로 변경합니다
     map.setCenter(locPosition);      
 }    
+ 
+  //gps click
+  document.getElementById('get_location').onclick = funtion() {
+      navigator.geolocation.getcurrentposition(c);
+      return false;
+  }
   
   
     //공대3호관 

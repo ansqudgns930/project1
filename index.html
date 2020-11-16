@@ -25,14 +25,11 @@
 
   //버튼
 
-    var customControl = document.getElementById('Btn1',{
-        position: naver.maps.Position.TOP_LEFT
-    });
+    var mapContainer = document.getElementById('Btn1');
+    customControl.setMap('Btn1');
 
-    customControl.setMap(Btn1);
-
-    var domEventListener = naver.maps.Event.addDOMListener(customControl.getElement(), 'click', function() {
-       map.setCenter(locPosition);  
+    navigator.geolocation.getCurrentPosition(document.getElement(), 'click', function() {
+       map.setCenter(locPosition);
     });
 
       

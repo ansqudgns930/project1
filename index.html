@@ -36,6 +36,9 @@ var map = new naver.maps.Map('map', mapOptions);
   // HTML5의 geolocation으로 사용할 수 있는지 확인합니다 
 if (navigator.geolocation) {
     
+    $('#Btn1').click(function(){
+        navigator.geolocation.getCurrentPosition(onSuccess, onError);
+});
     // GeoLocation을 이용해서 접속 위치를 얻어옵니다
     navigator.geolocation.getCurrentPosition(function(position) {
         
@@ -84,9 +87,6 @@ function displayMarker(locPosition, message) {
     map.setCenter(locPosition);      
 }    
 
-  $('#Btn1').click(function(){
-        navigator.geolocation.getCurrentPosition(onSuccess, onError);
-});
   
     //공대3호관 
   var polygon = new naver.maps.Polygon({

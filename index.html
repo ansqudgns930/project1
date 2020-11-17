@@ -20,7 +20,7 @@
   var mapContainer = document.getElementById('map'), 
    mapOptions = {
     center: new naver.maps.LatLng(35.945236,126.6800666),
-    zoom: 14
+    zoom: 15
 };
       
 
@@ -182,33 +182,31 @@ function displayMarker(locPosition, message) {
 });
   
   
-   //군산대학교 통학
+   //예술대
     var polygon = new naver.maps.Polygon({
     map: map,
     paths: [
         [
-            new naver.maps.LatLng(35.944196, 126.683321),
-            new naver.maps.LatLng(35.944257, 126.683128),
-            new naver.maps.LatLng(35.943953, 126.683043),
-            new naver.maps.LatLng(35.943545, 126.682967),
-            new naver.maps.LatLng(35.943241, 126.682538),
-            new naver.maps.LatLng(35.942842, 126.682452),
-            new naver.maps.LatLng(35.942776, 126.681653),
-            new naver.maps.LatLng(35.942715, 126.681750), 
-            new naver.maps.LatLng(35.942272, 126.680999),
-            new naver.maps.LatLng(35.942259, 126.680639),      
-            new naver.maps.LatLng(35.941977, 126.680607),
-            new naver.maps.LatLng(35.941803, 126.681519),
-            new naver.maps.LatLng(35.942064, 126.681669), 
-            new naver.maps.LatLng(35.942702, 126.681793),
-            new naver.maps.LatLng(35.942745, 126.682593),
-            new naver.maps.LatLng(35.943214, 126.682636),
-            new naver.maps.LatLng(35.943479, 126.683076),
-            new naver.maps.LatLng(35.943901, 126.683193), 
-            new naver.maps.LatLng(35.943971, 126.683311),
-            new naver.maps.LatLng(35.944196, 126.683321)
-
-
+            new naver.maps.LatLng(35.944265, 126.683674),
+            new naver.maps.LatLng(35.944393, 126.680687),
+            new naver.maps.LatLng(35.943810, 126.680654),
+            new naver.maps.LatLng(35.942879, 126.680902),
+            new naver.maps.LatLng(35.942732, 126.682606),
+            new naver.maps.LatLng(35.943234, 126.682623),
+            new naver.maps.LatLng(35.943515, 126.683086),
+            new naver.maps.LatLng(35.943951, 126.683152), 
+            new naver.maps.LatLng(35.943977, 126.683616),
+            new naver.maps.LatLng(35.944265, 126.683674),      
+//             new naver.maps.LatLng(35.941977, 126.680607),
+//             new naver.maps.LatLng(35.941803, 126.681519),
+//             new naver.maps.LatLng(35.942064, 126.681669), 
+//             new naver.maps.LatLng(35.942702, 126.681793),
+//             new naver.maps.LatLng(35.942745, 126.682593),
+//             new naver.maps.LatLng(35.943214, 126.682636),
+//             new naver.maps.LatLng(35.943479, 126.683076),
+//             new naver.maps.LatLng(35.943901, 126.683193), 
+//             new naver.maps.LatLng(35.943971, 126.683311),
+//             new naver.maps.LatLng(35.944196, 126.683321)
         ],
     ],
     fillColor: '#FFC933',

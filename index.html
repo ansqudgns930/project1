@@ -26,17 +26,17 @@
       //지오펜싱
           const start = async () => {
         const map = new HereMap("com.knu.coronaalarm", "com.knu.coronaalarm", document.getElementById("map"));
-        const lineString = new H.geo.LineString();
-        lineString.pushPoint({ lat: 35.942267, lng: 126.680675 });
-        lineString.pushPoint({ lat: 35.942089, lng: 126.681620 });
-        lineString.pushPoint({ lat: 35.941828, lng: 126.681566 });
-        lineString.pushPoint({ lat: 35.942002, lng: 126.680600 });
-        lineString.pushPoint({ lat: 35.942267, lng: 126.680675 });
+        const lineString = new naver.map.geo.LineString();
+            new naver.maps.LatLng(35.942267, 126.680675);
+            new naver.maps.LatLng(35.942089, 126.681620);
+            new naver.maps.LatLng(35.941828, 126.681566);
+            new naver.maps.LatLng(35.942002, 126.680600);
+            new naver.maps.LatLng(35.942267, 126.680675);
 //         lineString.pushPoint({ lat: 37, lng: -121 });
 //         lineString.pushPoint({ lat: 37.2, lng: -121.002 });
 //         lineString.pushPoint({ lat: 37.2, lng: -121.2 });
 //         lineString.pushPoint({ lat: 37, lng: -121 });
-        const polygon = new H.map.Polygon(lineString);
+        const polygon = new naver.map.Polygon(lineString);
         console.log(map.polygonToWKT(polygon));
         map.draw(polygon);
         const geofenceResponse = await map.uploadGeofence("1234", "Nic Secret Layer", map.polygonToWKT(polygon));

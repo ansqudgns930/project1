@@ -85,8 +85,13 @@ function displayMarker(locPosition, message) {
     // 지도 중심좌표를 접속위치로 변경합니다
     map.setCenter(locPosition);      
 }    
-//
-  window.addEventListener('load', function () {
+  
+    //알림권한
+
+  function askNotificationPermission() {
+  // 권한을 실제로 요구하는 함수
+  function handlePermission(permission) {
+    // 사용자의 응답에 관계 없이 크롬이 정보를 저장할 수 있도록 함
   
   //알림1
   function notifyMe() {
@@ -172,8 +177,10 @@ function displayMarker(locPosition, message) {
   // want to be respectful there is no need to bother them any more.
 }
   
+    
   
-  });
+      }
+  }
   
   
     //공대3호관 

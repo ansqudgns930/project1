@@ -10,12 +10,16 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script> 
+    <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=0l17ip7m3y"></script>
    
   
 </head>
 <body>
+   <!-- 네이버아이디로로그인 버튼 노출 영역 -->
+ <div id="naver_id_login"style="width:12%;height:5vh;position:absolute;top:12%;left:5%;z-index:100;"></div>
  <button onClick="window.location.reload()" style="font-size:0.75em;width:12%;height:5vh;position:absolute;top:5%;left:5%;z-index:100;color:#2980B9;">GPS</button>
  <div id="map" style="width:100%;height:100vh;"></div>
  <button type="button" onclick="notifyMe()" class="btn btn-danger" style="font-size:0.5em;width:12%;height:5vh;position:absolute;top:74%;left:5%;z-index:100;background-color:#C0392B;color:#FDFEFE;">3일이내 발생</button>
@@ -23,7 +27,15 @@
  <button type="button" class="btn btn-warning2" style="font-size:0.5em;width:12%;height:5vh;position:absolute;top:88%;left:5%;z-index:100;background-color:#F4D03F;color:#FDFEFE;">14일이내 발생</button>
  
 <script>
-
+  <!-- //네이버아이디로로그인 버튼 노출 영역 -->
+    var naver_id_login = new naver_id_login("sCpVfsqd_8_AmEqPytIc", "https://ansqudgns930.github.io/youtooalarm/");
+  	var state = naver_id_login.getUniqState();
+  	naver_id_login.setButton("white", 2,40);
+  	naver_id_login.setDomain("https://ansqudgns930.github.io/project1/");
+  	naver_id_login.setState(state);
+  	naver_id_login.setPopup();
+  	naver_id_login.init_naver_id_login();
+  
   var mapContainer = document.getElementById('map'), 
    mapOptions = {
     center: new naver.maps.LatLng(35.945236,126.6800666),

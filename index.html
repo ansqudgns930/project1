@@ -19,7 +19,6 @@
 </head>
 <body>
    <!-- 네이버아이디로로그인 버튼 노출 영역 -->
- <div id="naver_id_login"style="width:12%;height:5vh;position:absolute;top:12%;left:5%;z-index:100;"></div>
  <button onClick="window.location.reload()" style="font-size:0.75em;width:12%;height:5vh;position:absolute;top:5%;left:5%;z-index:100;color:#2980B9;">GPS</button>
  <div id="map" style="width:100%;height:100vh;"></div>
  <button type="button" onclick="notifyMe()" class="btn btn-danger" style="font-size:0.5em;width:12%;height:5vh;position:absolute;top:74%;left:5%;z-index:100;background-color:#C0392B;color:#FDFEFE;">3일이내 발생</button>
@@ -27,15 +26,6 @@
  <button type="button" class="btn btn-warning2" style="font-size:0.5em;width:12%;height:5vh;position:absolute;top:88%;left:5%;z-index:100;background-color:#F4D03F;color:#FDFEFE;">14일이내 발생</button>
  
 <script>
-  <!-- //네이버아이디로로그인 버튼 노출 영역 -->
-    var naver_id_login = new naver_id_login("sCpVfsqd_8_AmEqPytIc", "https://ansqudgns930.github.io/youtooalarm/");
-  	var state = naver_id_login.getUniqState();
-  	naver_id_login.setButton("white", 2,40);
-  	naver_id_login.setDomain("https://ansqudgns930.github.io/project1/");
-  	naver_id_login.setState(state);
-  	naver_id_login.setPopup();
-  	naver_id_login.init_naver_id_login();
-  
   var mapContainer = document.getElementById('map'), 
    mapOptions = {
     center: new naver.maps.LatLng(35.945236,126.6800666),
